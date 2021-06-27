@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +19,12 @@ public class Metodos {
 
 	}
 
+	public void maximizarNavegador() {
+		
+		driver.manage().window().maximize();
+		
+	}
+	
 	public void fecharNavegador(String descriPasso) {
 
 		driver.quit();
@@ -30,14 +37,21 @@ public class Metodos {
 
 	}
 
-	public void marcarCheckbox(By elemento) {
+	public void clicar(By elemento) {
 
 		driver.findElement(elemento).click();
 
 	}
+	
+	public void enter() {
+		
+		driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
+		
+	}
 
 	public void menuDropdown1(String texto1, String texto2) {
-
+		
+		//Mudar aqui os elementos
 		WebElement menuSkillsEl = driver.findElement(By.id("Skills"));
 		WebElement menuCountriesEl = driver.findElement(By.id("countries"));
 
@@ -51,6 +65,7 @@ public class Metodos {
 
 	public void menuDataNascimento(String dia, String mes, String ano) {
 
+		//Mudar aqui os elementos
 		WebElement menuDiaEl = driver.findElement(By.id("daybox"));
 		WebElement menuMesEl = driver.findElement(By.cssSelector("#basicBootstrapForm > div:nth-child(11) > div:nth-child(3) > select"));
 		WebElement menuAnoEl = driver.findElement(By.id("yearbox"));
