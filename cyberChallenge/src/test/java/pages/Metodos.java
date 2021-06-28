@@ -1,11 +1,16 @@
 package pages;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class Metodos {
 
@@ -48,6 +53,14 @@ public class Metodos {
 		driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
 		
 	}
+	
+	public void switchToEEscrever(By elemento, String texto) {
+		
+		//Switch to "frame.(webElement)"
+		driver.switchTo().frame("singleframe");
+		driver.findElement(elemento).sendKeys(texto);
+		
+	}
 
 	public void menuDropdown1(String texto1, String texto2) {
 		
@@ -79,6 +92,45 @@ public class Metodos {
 		menuAno.selectByVisibleText(ano);
 
 	}
+	
+	
+	public int qtdeCliques(Period period) {
+		
+		int cliques = period.getYears()*12 + period.getMonths();
+		return cliques;
+		
+	}
+	
+	public Period calculaPeriodo(int ano, int mes, int dia) {
+		
+		LocalDate today = LocalDate.now();                          //Today's date
+		LocalDate birthday = LocalDate.of(ano, mes, dia);  //Birth date
+		
+		Period period = Period.between(birthday, today);
+		return period;
+			
+	}
+	
+	public void clicarData (String dia){
+		
+		driver.findElement(By.linkText(dia)).click();
+		
+	}
+	
+	
+	
+	public void moverSlider() {
+		
+		WebElement greenSlider = driver.findElement(By.cssSelector("#slider > a"));
+		WebElement sliderArea = driver.findElement(By.xpath("//*[@id=\"slider\"]"));
+		
+		Actions action = new Actions(driver);
+		action.dragAndDropBy(greenSlider, (sliderArea.getSize().width * 50 / 100), 0).perform();
+		
+		
+	}
+	
+	
 			
 
 }

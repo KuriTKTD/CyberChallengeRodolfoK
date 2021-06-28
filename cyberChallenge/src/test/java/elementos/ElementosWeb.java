@@ -32,7 +32,33 @@ public class ElementosWeb {
 	public By switchToButton = By.cssSelector("#header > nav > div > div.navbar-collapse.collapse.navbar-right > ul > li:nth-child(4) > a");
 	public By framesButton = By.cssSelector("#header > nav > div > div.navbar-collapse.collapse.navbar-right > ul > li:nth-child(4) > ul > li:nth-child(3) > a");
 	public By inputSlot1 = By.cssSelector("body > section > div > div > div > input[type=text]");
-	//public By framesButton = By.cssSelector("");
+	
+	public By Iframe2 = By.cssSelector("body > section > div.container.center > div > div > div > div.col-xs-11.col-xs-offset-1 > div > ul > li:nth-child(2) > a");
+	public By Iframe2Texbox = By.cssSelector("body > section > div > div > div > input[type=text]");
+	
+	//cenário 3
+	
+	public By widgetsButton = By.cssSelector("#header > nav > div > div.navbar-collapse.collapse.navbar-right > ul > li:nth-child(5) > a");
+	public By datePickerButton = By.cssSelector("#header > nav > div > div.navbar-collapse.collapse.navbar-right > ul > li.dropdown.open > ul > li:nth-child(3) > a");
+	public By datePickerSelectB = By.cssSelector("#datepicker2");
+	public By datePickerSelectA = By.cssSelector("#datepicker1");
+	public By backButton = By.cssSelector("#ui-datepicker-div > div > a.ui-datepicker-prev.ui-corner-all > span");
+	public By dia27 = By.cssSelector("#ui-datepicker-div > table > tbody > tr:nth-child(5) > td.ui-datepicker-week-end.ui-datepicker-days-cell-over.ui-datepicker-today > a");
+	public By testeEncontrarElemento = By.className("ui-state-default");
+	
+	
+			//achando elementos do Calendário (enabled)
+	public By yearB = By.cssSelector("body > div.datepick-popup > div > div.datepick-month-row > div > div > select:nth-child(2)");
+	public By monthB = By.cssSelector("body > div.datepick-popup > div > div.datepick-month-row > div > div > select:nth-child(1)");
+	
+	public By topArrow = By.cssSelector("body > div.datepick-popup > div > div.datepick-month-row > div > div > select:nth-child(2) > option:nth-child(1)");
+	
+	//cenário 4
+	
+	public By sliderButton = By.cssSelector("#header > nav > div > div.navbar-collapse.collapse.navbar-right > ul > li.dropdown.open > ul > li:nth-child(4) > a");
+	public By sliderA = By.cssSelector("#slider > a");
+	
+	
 	
 	
 }
